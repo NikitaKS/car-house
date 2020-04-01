@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/car-house/static/css/main.83f877d4.chunk.css",
+    "main.js": "/car-house/static/js/main.48c5bccc.chunk.js",
+    "main.js.map": "/car-house/static/js/main.48c5bccc.chunk.js.map",
+    "runtime-main.js": "/car-house/static/js/runtime-main.a4c064c4.js",
+    "runtime-main.js.map": "/car-house/static/js/runtime-main.a4c064c4.js.map",
+    "static/js/2.221dc2e2.chunk.js": "/car-house/static/js/2.221dc2e2.chunk.js",
+    "static/js/2.221dc2e2.chunk.js.map": "/car-house/static/js/2.221dc2e2.chunk.js.map",
+    "index.html": "/car-house/index.html",
+    "precache-manifest.abd4d863dfd312daad197024d2dfff62.js": "/car-house/precache-manifest.abd4d863dfd312daad197024d2dfff62.js",
+    "service-worker.js": "/car-house/service-worker.js",
+    "static/css/main.83f877d4.chunk.css.map": "/car-house/static/css/main.83f877d4.chunk.css.map",
+    "static/js/2.221dc2e2.chunk.js.LICENSE.txt": "/car-house/static/js/2.221dc2e2.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a4c064c4.js",
+    "static/js/2.221dc2e2.chunk.js",
+    "static/css/main.83f877d4.chunk.css",
+    "static/js/main.48c5bccc.chunk.js"
+  ]
+}
