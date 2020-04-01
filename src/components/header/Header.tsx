@@ -1,22 +1,31 @@
 import React, {FC} from 'react';
 import './Header.less';
+import {NavLink} from "react-router-dom";
 
-const Header: FC = () => {
+const Header: FC = React.memo(() => {
     return (
         <header id="header">
             <div className="container">
                 <div className="in">
                     <div className="left">
-                        <a className='site-logo' href="#">logo</a>
+                        <a className='site-logo' href="/">logo</a>
                     </div>
                     <div className="right">
                         <div className="menu">
                             <div className="menu-in">
                                 <ul>
-                                    <li>Подобрать автомобиль</li>
-                                    <li>Как все работает</li>
-                                    <li>Регистрация компании</li>
-                                    <li>Проверить компанию</li>
+                                    <NavLink to={'/request'}>
+                                        <li>Подобрать автомобиль</li>
+                                    </NavLink>
+                                    <NavLink to={'/faq'}>
+                                        <li>Как все работает</li>
+                                    </NavLink>
+                                    <NavLink to={'register'}>
+                                        <li>Регистрация компании</li>
+                                    </NavLink>
+                                    <NavLink to={'/checkcompany'}>
+                                        <li>Проверить компанию</li>
+                                    </NavLink>
                                 </ul>
                             </div>
                         </div>
@@ -25,6 +34,6 @@ const Header: FC = () => {
             </div>
         </header>
     );
-};
+});
 
 export default Header;
