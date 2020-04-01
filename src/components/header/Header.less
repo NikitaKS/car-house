@@ -1,0 +1,35 @@
+@import "../../less/components/variables.less";
+
+#header {
+  .in {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .left {
+    }
+
+    .right {
+      .menu {
+        .menu-in {
+          ul {
+            display: flex;
+            color: white;
+
+            li {
+              background-color: #000000;
+              padding: 5px;
+              & + li {
+                margin-left: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  a {
+    color: #cccccc;
+  }
+}

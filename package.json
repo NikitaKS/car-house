@@ -12,7 +12,6 @@
     "@types/react-dom": "^16.9.0",
     "axios": "^0.19.2",
     "less": "^3.11.1",
-    "normalize.css": "^8.0.1",
     "react": "^16.13.1",
     "react-app-rewired": "^2.1.5",
     "react-dom": "^16.13.1",
@@ -21,6 +20,7 @@
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
+    "reset-css": "^5.0.1",
     "typescript": "~3.7.2"
   },
   "scripts": {
