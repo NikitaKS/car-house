@@ -1,8 +1,11 @@
 import {combineReducers, createStore, applyMiddleware} from "redux";
 import thunk from 'redux-thunk';
+import {formReducer} from "./formReducer/formReducer";
 
 
-const rootReducer = combineReducers({});
+const rootReducer = combineReducers({
+    formState: formReducer,
+});
 
 export type AppState = ReturnType<typeof rootReducer>
 

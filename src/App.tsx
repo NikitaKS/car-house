@@ -1,21 +1,16 @@
-import React from 'react';
+import React, {FC} from 'react';
 import Header from "./components/header/Header";
-import { Route } from 'react-router-dom';
-const s = require('./components/main/main.less');
+import Main from "./components/mainComponent/MainContainer";
+import Footer from "./components/footer/Footer";
 
-function App() {
+const App: FC = () => {
     return (
         <>
             <Header/>
-            <main id="content">
-                <div className="container">
-                    <h1>car house</h1>
-                    <h2>Подбор авто из США в два клика</h2>
-                </div>
-            </main>
-            <footer id="footer">1</footer>
+            <Main/>
+            <Footer/>
         </>
     );
-}
+};
 
 export default App;
