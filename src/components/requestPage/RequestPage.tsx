@@ -1,28 +1,18 @@
-import React, {FC, useEffect} from 'react';
+import React, {FC} from 'react';
 import MainRequestFrom from "../ReactHookForms/MainRequestForm";
 import './RequestPage.less'
-import {compose} from "redux";
-import {connect, useDispatch} from "react-redux";
-import {AppState} from "../../bll/store";
-import {getCarNames} from "../../bll/formReducer/formThunkCreators";
-import {ICarName} from "../../helpers/types";
 
 interface IProps {
-    carNames:ICarName[]
 }
 
-const RequestPage: FC<IProps> = React.memo((props) => {
-    const dispatch = useDispatch();
-    useEffect(()=>{
-        dispatch(getCarNames());
-    },[]);
+const RequestPage: FC<IProps> = (props) => {
     return (
         <div className='request-page-wrapper'>
             <div className="container">
                 <div className='request-in'>
                     <div className="left">
                         <div className="title">Подобрать Авто в Украине</div>
-                        <MainRequestFrom carNames={props.carNames}/>
+                        <MainRequestFrom />
                     </div>
                     <div className="right">
                         <div className="title">
@@ -35,18 +25,6 @@ const RequestPage: FC<IProps> = React.memo((props) => {
             </div>
         </div>
     );
-});
-
-interface Imstp {
-    carNames: ICarName[]
-}
-
-let mstp = (state: AppState): Imstp => {
-    return {
-        carNames: state.formState.carNames
-    }
 };
 
-export default compose(
-    connect<Imstp, {}, {}, AppState>(mstp, {})
-)(RequestPage);
+export default RequestPage;

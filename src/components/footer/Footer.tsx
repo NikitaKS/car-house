@@ -3,7 +3,9 @@ import './Footer.less';
 
 const Footer: FC = React.memo(() => {
     return (
-        <footer id="footer">1</footer>
+        <footer id="footer">
+            <div className="container"></div>
+        </footer>
     );
 });
 

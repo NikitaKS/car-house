@@ -1,14 +1,14 @@
 import {ThunkAction} from "redux-thunk";
 import {AppState} from "../store";
-import {AppActions, setCarNames} from "./formActionCreators";
 import {apiMainForm} from "../../dal/api";
+import {actions, AppActions} from "./formActionCreators";
 
 type ThunkActionType = ThunkAction<Promise<void>, AppState, unknown, AppActions>;
 
 export const getCarNames = (): ThunkActionType => async (dispatch) => {
     try {
-       const result = await apiMainForm.getCarNames();
-       dispatch(setCarNames(result))
+        const result = await apiMainForm.getCarNames();
+        dispatch(actions.setCarNames(result))
     } catch (e) {
 
     }
@@ -22,3 +22,26 @@ export const getCarNames = (): ThunkActionType => async (dispatch) => {
     //     dispatch(setStatus(Statuses.error));
     // }
 };
+export const getYears = (): ThunkActionType => async (dispatch) => {
+    try {
+        const result = await apiMainForm.getYears();
+        dispatch(actions.setYears(result))
+    } catch (e) {
+
+    }
+};
+export const sendDataTC = (): ThunkActionType => async (dispatch, getState) => {
+    try {
+        const data = getState().formState.data
+        const result = await apiMainForm.setUserData(data)
+    } catch (e) {
+
+    }
+};
+export const register = (name: string, email: string, number: string): ThunkActionType => async (dispatch) => {
+    try {
+        await apiMainForm.register(name, email, number)
+    } catch (e) {
+
+    }
+}

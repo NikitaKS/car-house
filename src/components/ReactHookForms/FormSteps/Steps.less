@@ -1,0 +1,41 @@
+.steps-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  .grid-steps-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 10px;
+    width: 100%;
+  }
+
+  .form-items-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+  }
+
+  .btn-next {
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+    background-color: #22447e;
+    color: white;
+    font-size: 16px;
+    //grid-area: 3/1/3/3;
+  }
+
+  span {
+    cursor: pointer;
+    border-bottom: 1px dashed #000000;
+    line-height: 28px;
+
+    &:hover {
+      border-bottom: 1px solid #000000;
+    }
+  }
+}

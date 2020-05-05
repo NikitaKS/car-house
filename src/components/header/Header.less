@@ -1,4 +1,5 @@
 @import "../../less/components/variables.less";
+@import "../../less/components/mixins";
 
 #header {
   .in {
@@ -7,24 +8,115 @@
     align-items: center;
 
     .left {
+      flex-shrink: 0;
     }
 
     .right {
-      .menu {
-        .menu-in {
-          ul {
-            display: flex;
-            color: white;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      //mobile menu
+      .buttonMenu {
+        width: 30px;
+        height: 19px;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        transition: transform 200ms ease-out;
+        @media @tbmb {
+          display: flex;
+          justify-self: end;
+        }
 
-            a {
-              & + a {
-                margin-left: 15px;
-              }
+        &.open {
+          transform: rotate(-45deg);
+
+          .lineMenu.start {
+            transform: rotate(-90deg) translateX(6px);
+          }
+
+          .lineMenu.end {
+            transform: rotate(-90deg) translateX(-6px);
+          }
+        }
+
+        .lineMenu {
+          background-color: #fff;
+          border-radius: 5px;
+          width: 100%;
+          height: 2px;
+
+          &.half {
+            width: 50%;
+          }
+
+          &.start {
+            transition: transform 200ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+            transform-origin: right;
+          }
+
+          &.end {
+            align-self: flex-end;
+            transition: transform 200ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+            transform-origin: left;
+          }
+        }
+      }
+
+      // ---mobile menu---
+
+
+      .menu {
+        @media @tbmb {
+          display: none;
+
+        }
+
+        ul {
+          display: flex;
+          color: white;
+
+          li {
+            background-color: #000000;
+            & + li {
+              margin-left: 15px;
             }
+          }
+
+
+          li a {
+            border: 0;
+            font-size: 14px;
+            height: auto;
+            padding: 14px 10px;
+            color: #ffffff;
+            display: block;
+            width: 100%;
+          }
+        }
+
+        &.active {
+          display: flex;
+          position: absolute;
+          right: 0;
+          top: 100%;
+          width: 100%;
+          background-color: #07773F;
+
+          ul {
+            display: block;
+            width: 100%;
 
             li {
-              background-color: #000000;
-              padding: 5px;
+              width: 100%;
+            }
+
+            li + li {
+              margin-left: 0;
+              //margin-top: 10px;
             }
           }
         }
